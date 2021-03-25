@@ -12,6 +12,7 @@ insert into users (name, login, password) values
   ('Pavel Pavlov', 'pasha', '1q2w3e'),
   ('Vladimir Vladimirov', 'vova', 'qwe123');
 
+-- user can be a member of many groups
 create table groups
 (
   id integer primary key,
@@ -20,10 +21,14 @@ create table groups
 );
 
 insert into groups (name, description) values
-  ('admin', 'super user'),
-  ('user', 'regular user'),
-  ('guest', 'limited acces user');
+('inters', 'potential workers'),
+('workers', 'only company workers'),
+('managers', 'managers only'),
+('contractors', 'part time workers'),
+('guests', 'potential clients'),
+('clients', 'company clients');
 
+-- user can have only one role
 create table roles
 (
   id integer primary key,
@@ -32,6 +37,7 @@ create table roles
 );
 
 insert into roles (name, description) values
-  ('rwx','full access'),
-  ('rw', 'read and write file, no execution premitted'),
-  ('r', 'read-only access');
+  ('visitor', 'readonly user'),
+  ('user','Can create data, update and delete own data'),
+  ('content_manage', 'can create, update, and delete any data'),
+  ('administrator', 'full data access, can create users');
