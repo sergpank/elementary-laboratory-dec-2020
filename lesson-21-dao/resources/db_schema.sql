@@ -6,6 +6,9 @@ create table users
   password text
 );
 
+select * from users;
+
+
 insert into users (name, login, password) values
   ('Alexandr Alexandrov', 'alex', 'asd123'),
   ('Ivan Ivanov', 'vanya', '123456'),

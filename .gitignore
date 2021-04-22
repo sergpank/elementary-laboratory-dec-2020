@@ -1,5 +1,4 @@
 # Default ignored files and directories
 *.iml
-*.sqlite3
 .idea/
 target/
